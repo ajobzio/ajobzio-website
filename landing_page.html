@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajobzio – Find Work. Earn Daily.</title>
+  <meta name="description" content="Ajobzio connects jobless and skilled people with local and online work opportunities. Earn daily with flexible jobs." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+    body { color: #1f2937; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #2563eb, #1e40af); color: #fff; padding: 80px 20px; text-align: center; }
+    header h1 { font-size: 3rem; margin-bottom: 16px; }
+    header p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 32px; }
+    .btn { display: inline-block; padding: 14px 28px; border-radius: 8px; background: #22c55e; color: #fff; text-decoration: none; font-weight: bold; }
+    .btn.secondary { background: #fff; color: #1e40af; margin-left: 12px; }
+
+    section { padding: 70px 20px; max-width: 1100px; margin: auto; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 16px; padding: 24px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .card h3 { margin-bottom: 10px; color: #1e40af; }
+
+    .how { background: #f9fafb; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+
+    .cta { text-align: center; background: #1e40af; color: #fff; border-radius: 24px; padding: 60px 20px; }
+    .cta h2 { font-size: 2.2rem; margin-bottom: 16px; }
+
+    footer { background: #020617; color: #cbd5f5; padding: 30px 20px; text-align: center; }
+    footer a { color: #93c5fd; text-decoration: none; margin: 0 8px; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+    }
+  
+    /* Slideshow (JS based – reliable, FIXED) */
+    .slider { max-width: 1000px; margin: 60px auto; overflow: hidden; border-radius: 20px; background:#f1f5f9; }
+    .slides { position: relative; height: 220px; }
+    .slide { position: absolute; inset: 0; padding: 60px 30px; text-align: center; opacity: 0; transition: opacity 0.8s ease-in-out; display:flex; flex-direction:column; justify-content:center; }
+    .slide.active { opacity: 1; }
+    .slide h3 { color: #1e40af; margin-bottom: 12px; font-size: 1.8rem; }
+    .slide p { font-size: 1.1rem; }
+
+    /* Job Categories – SQUARE ICON GRID */
+    .job-list { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:24px; justify-items:center; }
+    .job-item { width:140px; height:140px; background:#fff; border-radius:16px; box-shadow:0 10px 20px rgba(0,0,0,0.08); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease; text-align:center; }
+    .job-item:hover { transform:translateY(-6px); box-shadow:0 18px 32px rgba(0,0,0,0.12); }
+    .job-badge { width:56px; height:56px; border-radius:12px; background:#1e40af; color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.8rem; }
+    .job-text strong { font-size:0.95rem; color:#020617; }
+    .job-text small { display:none; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Ajobzio</h1>
+    <p>Connecting jobless and skilled people with real work opportunities. Find local, online, and part‑time jobs. Earn daily. Work freely.</p>
+    <p style="margin-top:12px; font-size:1.1rem; background:rgba(255,255,255,0.15); display:inline-block; padding:8px 16px; border-radius:999px;">🚧 Platform launching soon</p>
+    <a href="#" class="btn" style="pointer-events:none; opacity:0.7;">Coming Soon</a>
+    <a href="#features" class="btn secondary">Learn More</a>
+  </header>
+
+  <!-- Slideshow -->
+  <div class="slider" aria-label="Ajobzio highlights slider">
+    <div class="slides">
+      <div class="slide">
+        <h3>Find Jobs Near You</h3>
+        <p>Search and apply for local jobs and services in your area.</p>
+      </div>
+      <div class="slide">
+        <h3>Hire Skilled Workers</h3>
+        <p>Need work done? Find verified workers by job category instantly.</p>
+      </div>
+      <div class="slide">
+        <h3>Earn Daily Income</h3>
+        <p>Flexible work opportunities that help you earn on your own schedule.</p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Features -->
+  <!-- Job Categories -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:40px;">Popular Job Categories</h2>
+    <div class="job-list" id="jobList"></div>
+  </section>
+
+  <section id="features">
+    <h2 style="text-align:center; margin-bottom:40px;">Why Ajobzio?</h2>
+    <div class="features">
+      <div class="card">
+        <h3>For Job Seekers</h3>
+        <p>Find flexible jobs like online teaching, delivery, driving, plumbing, electrician work, and more.</p>
+      </div>
+      <div class="card">
+        <h3>Hire Workers Easily</h3>
+        <p>Search and hire workers based on job type like electrician, plumber, driver, delivery partner, or online tutor. Find the right worker when you need them.</p>
+      </div>
+      <div class="card">
+        <h3>Daily Income</h3>
+        <p>Work today and earn quickly. Ideal for people looking for side income or full‑time work.</p>
+      </div>
+      <div class="card">
+        <h3>Simple & Secure</h3>
+        <p>Easy registration, verified users, and transparent communication.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="how">
+    <p style="text-align:center; max-width:700px; margin:0 auto 30px;">Need someone to get a job done? Ajobzio lets you search workers by job category and connect instantly.</p>
+    <h2 style="text-align:center; margin-bottom:40px;">How It Works</h2>
+    <div class="steps">
+      <div class="card">
+        <h3>1. Sign Up</h3>
+        <p>Create a free account as a worker or service requester.</p>
+      </div>
+      <div class="card">
+        <h3>2. Post or Apply</h3>
+        <p>Post a job or apply for available work that matches your skills.</p>
+      </div>
+      <div class="card">
+        <h3>3. Work & Earn</h3>
+        <p>Complete the job and get paid. Build your profile and reputation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta">
+      <h2>Start Earning with Ajobzio Today</h2>
+      <p style="margin-bottom:24px;">Whether you need work or need workers, Ajobzio is the place to start.</p>
+      <a href="#" class="btn" style="pointer-events:none; opacity:0.7;">Coming Soon</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Ajobzio. All rights reserved.</p>
+    <p>
+      <a href="#">About</a> |
+      <a href="#">Contact</a> |
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms</a>
+    </p>
+  </footer>
+
+<!-- Job Category Modal -->
+<div id="jobModal" style="display:none; position:fixed; inset:0; background:rgba(2,6,23,0.6); align-items:center; justify-content:center; z-index:1000;">
+  <div style="background:#fff; max-width:420px; width:90%; border-radius:20px; padding:30px; position:relative;">
+    <button onclick="closeJobModal()" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:22px; cursor:pointer;">×</button>
+    <div id="modalIcon" style="width:72px;height:72px;border-radius:50%;background:#1e40af;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 14px;"></div>
+    <h3 id="modalTitle" style="color:#1e40af; margin-bottom:12px; text-align:center;"></h3>
+    <p id="modalDesc" style="color:#334155; line-height:1.6;"></p>
+  </div>
+</div>
+
+<script>
+  /* ---------------- Slider ---------------- */
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+  }
+  showSlide(currentSlide);
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 3000);
+
+  /* ---------------- Job Categories (data-driven) ---------------- */
+  const jobs = [
+    { icon: '🔧', title: 'Electrician', desc: 'Handles electrical installations, repairs, wiring, switches, fans, and power issues.' },
+    { icon: '🚿', title: 'Plumber', desc: 'Fixes water leaks, pipelines, taps, bathrooms, and drainage systems.' },
+    { icon: '🚗', title: 'Driver', desc: 'Provides driving services for personal trips, offices, and commercial vehicles.' },
+    { icon: '🛵', title: 'Delivery', desc: 'Delivers food, groceries, and parcels for local businesses and platforms.' },
+    { icon: '💻', title: 'Online Tutor', desc: 'Teaches students online in academics, languages, or professional skills.' },
+    { icon: '🧹', title: 'Cleaning', desc: 'Provides home, office, and commercial cleaning services.' },
+    { icon: '🛠️', title: 'Mechanic', desc: 'Repairs and maintains bikes, cars, and other vehicles.' },
+    { icon: '🏗️', title: 'Construction', desc: 'Includes masonry, labor work, painting, and construction support.' }
+  ];
+
+  const jobList = document.getElementById('jobList');
+  jobs.forEach(job => {
+    const item = document.createElement('div');
+    item.className = 'job-item';
+    item.innerHTML = `
+      <div class="job-badge">${job.icon}</div>
+      <strong>${job.title}</strong>
+    `;
+    item.onclick = () => openJobModal(job.icon, job.title, job.desc);
+    jobList.appendChild(item);
+  });
+
+  /* ---------------- Modal ---------------- */
+  const jobModal = document.getElementById('jobModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+
+  function openJobModal(icon, title, desc) {
+    document.getElementById('modalIcon').textContent = icon;
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    jobModal.style.display = 'flex';
+  }
+
+  function closeJobModal() {
+    jobModal.style.display = 'none';
+  }
+
+  jobModal.addEventListener('click', e => {
+    if (e.target === jobModal) closeJobModal();
+  });
+</script>
+</body>
+</html>
