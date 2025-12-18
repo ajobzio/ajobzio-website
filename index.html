@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ajobzio – Find Work. Earn Daily.</title>
+  <link rel="icon" type="image/x-icon" href="/images/ajobzio_icon_4x4_bg.png">
   <meta name="description" content="Ajobzio connects jobless and skilled people with local and online work opportunities. Earn daily with flexible jobs." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
@@ -35,7 +36,7 @@
     /* Slideshow (JS based – reliable, FIXED) */
     .slider { max-width: 1000px; margin: 60px auto; overflow: hidden; border-radius: 20px; background:#f1f5f9; }
     .slides { position: relative; height: 220px; }
-    .slide { position: absolute; inset: 0; padding: 60px 30px; text-align: center; opacity: 0; transition: opacity 0.8s ease-in-out; display:flex; flex-direction:column; justify-content:center; }
+    .slide { position: absolute; inset: 0; padding: 60px 30px; text-align: center; opacity: 0; transition: opacity .8s ease-in-out; display:flex; flex-direction:column; justify-content:center; }
     .slide.active { opacity: 1; }
     .slide h3 { color: #1e40af; margin-bottom: 12px; font-size: 1.8rem; }
     .slide p { font-size: 1.1rem; }
@@ -171,7 +172,7 @@
   setInterval(() => {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
-  }, 3000);
+  }, 8000);
 
   /* ---------------- Job Categories (data-driven) ---------------- */
   const jobs = [
